@@ -1,0 +1,24 @@
+extends _skeleton-theme
+include mixins/_navbar
+include mixins/_footer
+
+block append styles
+  link(href=`${CWD}assets/lib/prismjs/prism-okaidia.css`, rel='stylesheet')
+
+block append scripts
+  script(src=`${CWD}assets/lib/prismjs/prism.js`)
+    
+block append content
+  .container
+    .row.mt-3
+      .col-lg-9.col-xxl-10
+        block component
+
+      .col.d-none.d-lg-block
+        ul.list-unstyled.sticky-top.pt-2
+          li
+            a.text-decoration-none.text-500(href='#quick-start') Quick start
+          li 
+            a.text-decoration-none.text-500(href='#setting-up-build-system') Build system
+          li 
+            a.text-decoration-none.text-500(href='#rtl') RTL

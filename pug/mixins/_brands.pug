@@ -1,0 +1,13 @@
+mixin brand(image)
+	.col-6.col-sm-4.col-md-2&attributes(attributes)
+		img(src=`${CWD}assets/img/gallery/${image}` alt='').img-fluid
+
+mixin brands
+	+section.py-5.border-bottom
+		.row
+			+brand('1.png').mb-2.mb-md-0
+			+brand('2.png').mb-2.mb-md-0
+			+brand('3.png').mb-2.mb-md-0
+			+brand('4.png').mb-2.mb-sm-0
+			+brand('5.png').mb-2.mb-sm-0
+			+brand('6.png').mb-2.mb-sm-0

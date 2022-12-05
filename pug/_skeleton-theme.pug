@@ -1,0 +1,35 @@
+extends core/_skeleton
+include _functions
+include mixins/_navbar
+include mixins/_footer
+  
+
+block append variables
+  - var title = 'Bridge';
+  - var themeName = 'Bridge';
+  - var version = 'v1.0.0';
+  - var theme = `${themeName}-${version}`;
+  - var bootstrapVersion = 5.0;
+  - var ATTRS_MAIN = { class: 'main' };
+  - var colors = ['primary', 'secondary', 'success', 'info', 'warning', 'danger', 'light', 'dark'];
+  - var grays = ['black', 1100, 1000, 900, 800, 700, 600, 500, 400, 300, 200, 100, 'white'];
+  - var colorsAll = colors.concat(grays);
+  
+block scripts
+  script(src=`${CWD}assets/lib/is/is.min.js`)
+  script(src=`${CWD}assets/lib/stickyfilljs/stickyfill.min.js`)
+  
+  if ENV === 'LIVE'
+    // Global site tag (gtag.js) - Google Analytics
+
+block styles
+  link(href='https://fonts.googleapis.com/css?family=Poppins:400,300&display=swap' rel='stylesheet')
+  
+
+block mainContent
+  +navbar
+  block wrapperContent 
+    block beforeContent
+    block content
+    block afterContent
+  +pre-footer

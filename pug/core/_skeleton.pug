@@ -1,0 +1,104 @@
+//- ===============================================
+//-     Global  Variables
+//- ===============================================
+block variables
+  - var ATTRS_HTML = { lang:'en-US', dir: 'ltr' };
+  - var title = 'theme | Look like an expert right from the start';
+  - var ATTRS_BODY = {};
+  - var ATTRS_MAIN = {};
+  - var CWD = '';
+  - var API_GMAP = 'AIzaSyARdVcREeBK44lIWnv5-iPijKqvlSAVwbw';
+
+
+//- ===============================================
+//-     Basic Modules
+//- ===============================================
+include _background
+include _section
+
+
+doctype html
+html()&attributes(ATTRS_HTML)
+  head
+
+    block meta
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+
+
+    = '\n\n'
+    // ===============================================
+    //    Document Title
+    // ===============================================
+    title=title
+
+
+    = '\n\n'
+    // ===============================================
+    //    Favicons
+    // ===============================================
+    block favicon
+      link(rel="apple-touch-icon", sizes="180x180", href=`${CWD}assets/img/favicons/apple-touch-icon.png`)
+      link(rel="icon", type="image/png", sizes="32x32", href=`${CWD}assets/img/favicons/favicon-32x32.png`)
+      link(rel="icon", type="image/png", sizes="16x16", href=`${CWD}assets/img/favicons/favicon-16x16.png`)
+      link(rel="shortcut icon", type="image/x-icon", href=`${CWD}assets/img/favicons/favicon.ico`)
+      link(rel="manifest", href=`${CWD}assets/img/favicons/manifest.json`)
+      meta(name='msapplication-TileImage', content=`${CWD}assets/img/favicons/mstile-150x150.png`)
+      meta(name="theme-color", content="#ffffff")
+
+
+
+    = '\n\n'
+    // ===============================================
+    //    Stylesheets
+    // ===============================================
+
+    block styles
+
+    if ATTRS_HTML.dir !== 'rtl'
+      link(href=`${CWD}assets/css/theme.css`, rel='stylesheet')
+    else
+      link(href=`${CWD}assets/css/theme-rtl.css`, rel='stylesheet')
+    = '\n'
+
+
+
+
+
+  = '\n\n'
+  body()&attributes(ATTRS_BODY)
+
+    block beforeMainContent
+
+    = '\n'
+    // ===============================================
+    //    Main Content
+    // ===============================================
+    main()&attributes(ATTRS_MAIN)
+      block mainContent
+    // ===============================================
+    //    End of Main Content
+    // ===============================================
+    = '\n\n'
+
+    block afterMainContent
+
+    = '\n\n'
+    // ===============================================
+    //    JavaScripts
+    // ===============================================
+    <!-- JavaScript and dependencies -->
+    
+    script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
+    script( src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous")
+    //- script(src=`${CWD}assets/js/popper.min.js`)
+    //- script(src=`${CWD}assets/js/bootstrap.js`)
+    script(src=`${CWD}assets/js/plugins.js`)
+
+    block scripts
+
+    script(src=`${CWD}assets/js/theme.js`)
+    
+    block afterScripts
+    = '\n'
